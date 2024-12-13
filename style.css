@@ -47,6 +47,7 @@ button {
 #add-todo-button {
     background-color: gray;
     color: white;
+    margin-top: 20px;
 }
 
 #add-todo-button:hover {
