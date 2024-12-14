@@ -6,8 +6,16 @@ addButton.addEventListener('click', function () {
     const taskText = todoInput.value;
     if (taskText) {
         const li = document.createElement('li');
+
         const taskSpan = document.createElement('span');
         taskSpan.textContent = taskText;
+
+        const timestamp = document.createElement('span');
+        const currentTime = new Date();
+        timestamp.textContent = ` (${currentTime.toLocaleTimeString()})`;
+        timestamp.style.marginLeft = "10px";
+        timestamp.style.fontSize = "0.9rem";
+        timestamp.style.color = "gray";
 
         const completeButton = document.createElement('button');
         completeButton.textContent = 'Complete';
@@ -29,8 +37,10 @@ addButton.addEventListener('click', function () {
         buttonContainer.appendChild(deleteButton);
 
         li.appendChild(taskSpan);
+        li.appendChild(timestamp);
         li.appendChild(buttonContainer);
         taskList.appendChild(li);
+
         todoInput.value = '';
     }
 });
